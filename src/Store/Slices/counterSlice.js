@@ -11,13 +11,15 @@ const counterSlice = createSlice(
         {
 
             AddCount: (state, action) => {
-                state.Counter= ++state.Counter
-                // setCount(state + 1);
+                console.log(action)
+                state.Counter = ++state.Counter
             }
             , DecCount: (state, action) => {
-                if (state !== 0) {
-                    // setCount(Count - 1);
-                }
+                console.log(action)
+
+               
+                    state.Counter != 0 ? --state.Counter :""
+               
 
             }
         }

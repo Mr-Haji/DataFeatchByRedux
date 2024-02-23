@@ -1,21 +1,17 @@
 import React from "react";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AddCount, DecCount } from "../../Store/Slices/counterSlice";
-
 const Home = () => {
-  const [Count, setCount] = useState("");
-console.log(Count)
+
+
+  const Count = useSelector((state) => state.counterSliceReducer);
+  console.log("Count", Count.Counter);
   const dispatch = useDispatch();
-  const selector = useSelector((state) => state.counterSliceReducer);
-  console.log(selector)
-//   setCount(selector);//yha sykrna hy agy
+
 
   return (
     <>
-      <div>
-        <h1>{}</h1>
-      </div>
+      <h1>COUNTER : {Count.Counter} </h1>
       <button onClick={() => dispatch(AddCount())}>Inc</button>
       <button onClick={() => dispatch(DecCount())}>Dec</button>
     </>
